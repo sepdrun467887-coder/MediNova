@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#087f8c"><meta name="description" content="MediNova bilingual medicine information and nearby medical help"><title>MediNova — Medical Help</title>
+<style>
+:root{--teal:#087f8c;--deep:#07545d;--mint:#e7f8f5;--ink:#18323a;--muted:#60767c;--line:#dce9e9;--red:#c93640}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f7fbfb;line-height:1.5}a{color:inherit}.top{background:white;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.nav{max-width:1100px;margin:auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:850;font-size:1.2rem;color:var(--deep)}.logo{display:grid;place-items:center;background:var(--teal);color:white;border-radius:12px;width:40px;height:40px;font-size:24px}.navlinks{display:flex;gap:16px}.navlinks a{text-decoration:none;font-size:.9rem;font-weight:700}.wrap{max-width:1100px;margin:auto;padding:0 18px}.hero{padding:42px 0;background:radial-gradient(circle at 85% 15%,#d2f3ef,transparent 32%),linear-gradient(135deg,#effbf9,#f7fbfb 65%)}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.06;letter-spacing:-.04em;margin:12px 0}h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0}p{color:var(--muted)}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;font-size:.94rem;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:7px;cursor:pointer;background:var(--teal);color:white}.btn:hover{filter:brightness(.95)}.btn.light{background:white;color:var(--deep);border:1px solid var(--line)}.btn.red{background:var(--red)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.panel,.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 5px 18px #123d4207}.emergency-banner{display:flex;gap:12px;align-items:center;padding:13px;border-radius:14px;background:#fff0f0;margin-bottom:14px}.emergency-banner b{display:block}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat{background:var(--mint);border-radius:13px;padding:13px}.stat b{display:block;color:var(--deep);font-size:1.25rem}.stat span,.small{font-size:.83rem;color:var(--muted)}section{padding:38px 0}.head{margin-bottom:18px}.head p{margin:5px 0}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.ico{width:46px;height:46px;display:grid;place-items:center;border-radius:14px;background:var(--mint);font-size:24px}.card h3{margin:12px 0 5px}.card p{font-size:.94rem;margin:0 0 14px}.field{width:100%;min-width:0;padding:12px 13px;border:1px solid #cbdede;border-radius:11px;font:inherit;background:white;color:var(--ink)}.field:focus{outline:3px solid #087f8c25;border-color:var(--teal)}.searchrow{display:flex;gap:10px;margin:12px 0}.result{margin-top:12px;background:#f2faf9;border:1px solid var(--line);padding:14px;border-radius:13px}.result h4{margin:0 0 6px}.result p{margin:4px 0}.notice{border-left:4px solid #e4a329;background:#fff8e8;padding:13px 15px;border-radius:8px;color:#604b20;font-size:.9rem;margin-top:16px}.status{margin-top:10px;font-size:.9rem;color:var(--deep)}.footer{background:#103c43;color:#e9f7f6;padding:25px 0;margin-top:15px}.footer p{color:#c5dedd;font-size:.9rem}.footer-grid{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:740px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.navlinks{gap:9px}.navlinks a{font-size:.78rem}.searchrow{flex-direction:column}.hero{padding-top:30px}.wrap{padding:0 14px}.nav{padding:10px 12px}}@media(max-width:380px){.navlinks a:nth-child(2){display:none}}
+</style></head>
+<body>
+<header class="top"><nav class="nav"><a class="brand" href="#"><span class="logo">✚</span>MediNova</a><div class="navlinks"><a href="#medicine">Medicines</a><a href="#nearby">Nearby care</a><a href="#emergency">Emergency</a><button class="btn light" type="button" onclick="toggleLanguage()" id="langToggle" aria-label="Switch language">हिंदी</button></div></nav></header>
+<main>
+<div class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Healthcare help, made easier</div><h1>Find care.<br><span style="color:var(--teal)">Feel supported.</span></h1><p>Search general medicine information, discover nearby medical facilities, and find guidance on the next step in care.</p><div class="actions"><button class="btn" onclick="enableLocation()">📍 Turn on live location</button><a class="btn light" href="#medicine">Search medicines</a></div><p class="small">Your browser will ask permission before sharing location. This demo does not store your location.</p></div>
+<div class="panel"><div class="emergency-banner"><span style="font-size:27px">🚑</span><div><b>Need emergency help?</b><span class="small">India emergency number: 112</span></div></div><div class="stats"><div class="stat"><b>Live GPS</b><span>Permission-based location</span></div><div class="stat"><b>Medicine guide</b><span>Demo information + verified source link</span></div><div class="stat"><b>Nearby care</b><span>Map search using location</span></div><div class="stat"><b>Mobile ready</b><span>Responsive layout</span></div></div><div class="actions"><a class="btn red" href="tel:112">Call 112</a><a class="btn light" href="https://112.gov.in/" target="_blank" rel="noopener">Official emergency info ↗</a></div></div></div></div>
+<section id="medicine"><div class="wrap"><div class="head"><h2>Medicine information finder</h2><p>Search the demo examples or open the official Indian drug-approval search.</p></div><div class="panel"><form id="medForm"><label for="medInput"><b>Medicine / generic name</b></label><div class="searchrow"><input id="medInput" class="field" placeholder="Try paracetamol, cetirizine, ibuprofen, ORS" required><button class="btn" id="medSearchBtn">Search</button><button class="btn light" type="button" onclick="startVoiceSearch()" id="voiceBtn">🎤 Speak</button></div><div class="actions"><button class="btn light" type="button" onclick="speakMedicineInfo('en')" id="speakEnBtn">🔊 Speak English</button><button class="btn light" type="button" onclick="speakMedicineInfo('hi')" id="speakHiBtn">🔊 हिंदी में सुनें</button><button class="btn light" type="button" onclick="speakMedicineInfo('both')" id="speakBothBtn">🔊 Speak Both / दोनों में</button><button class="btn light" type="button" onclick="stopSpeaking()">⏹ Stop audio</button></div><p class="small" id="voiceStatus" aria-live="polite">Voice features depend on browser and device language support.</p></form><div id="medResult" aria-live="polite"><p class="small">The local demo contains only a few sample entries, not all medicines.</p></div><div class="actions"><a class="btn light" href="https://www.cdscoonline.gov.in/CDSCO/cdscoDrugs" target="_blank" rel="noopener">Search CDSCO approved drugs ↗</a><a class="btn light" href="https://cdsco.gov.in/" target="_blank" rel="noopener">CDSCO official site ↗</a></div><div class="notice"><b>Medical safety:</b> Information is educational and not a diagnosis or prescription. Do not start, stop, or change a medicine based on this demo. Confirm the exact product, strength, suitability, and instructions with a qualified pharmacist or clinician. Emergency symptoms need urgent professional help.</div></div></div></section>
+<section id="nearby" style="background:#eff8f7"><div class="wrap"><div class="head"><h2>Find nearby medical help</h2><p>Enable location or enter a city/area. Map listings may be incomplete and do not confirm live availability.</p></div><div class="panel"><div class="searchrow"><input id="area" class="field" placeholder="Enter city, area or PIN code (optional)"><button class="btn light" onclick="enableLocation()">Use GPS</button></div><div id="locStatus" class="status" aria-live="polite">GPS not checked yet. Tap “Use GPS” to request your location, or enter an area manually.</div></div><div class="cards" style="margin-top:15px"><div class="card"><div class="ico">💊</div><h3>Pharmacies</h3><p>Find nearby pharmacies and call to confirm medicine stock and hours.</p><button class="btn" onclick="mapSearch('pharmacy')">Find pharmacies ↗</button></div><div class="card"><div class="ico">🏥</div><h3>Hospitals & clinics</h3><p>Find local facilities and contact them to check services.</p><button class="btn" onclick="mapSearch('hospital')">Find hospitals ↗</button></div><div class="card"><div class="ico">🚑</div><h3>Ambulance services</h3><p>Search provider listings. This site does not dispatch or track ambulances.</p><button class="btn red" onclick="mapSearch('ambulance service')">Find ambulances ↗</button></div></div><div class="notice"><b>Emergency in India:</b> Call <a href="tel:112"><b>112</b></a>. The official ERSS system provides emergency assistance; this demo is not connected to its dispatch system. <a href="https://112.gov.in/" target="_blank" rel="noopener">Learn more ↗</a></div></div></section>
+<section id="emergency"><div class="wrap"><div class="head"><h2>Emergency help</h2><p>For an emergency in India, call 112. MediNova does not dispatch ambulances.</p><div class="actions"><a class="btn red" href="tel:112">🚑 Call 112</a><a class="btn light" href="https://www.google.com/maps/search/ambulance+service" target="_blank" rel="noopener">Find ambulance services ↗</a></div></div></div></section><section><div class="wrap"><div class="head"><h2>What MediNova can do next</h2><p>A complete service needs verified partners and secure infrastructure.</p></div><div class="cards"><div class="card"><div class="ico">📚</div><h3>Full medicine catalogue</h3><p>Connect an authorized, maintained database with clear source and update dates. No public database guarantees every medicine and every detail.</p></div><div class="card"><div class="ico">📦</div><h3>Live pharmacy stock</h3><p>Requires participating pharmacies to share current stock, prices, and opening hours.</p></div><div class="card"><div class="ico">🛰️</div><h3>Ambulance tracking</h3><p>Requires a real ambulance provider or dispatch integration; map search alone cannot show vehicle location or ETA.</p></div></div></div></section>
+</main><footer class="footer"><div class="wrap footer-grid"><div><a class="brand" style="color:white" href="#"><span class="logo">✚</span>MediNova</a><p>Helping people find the next step in care.</p></div><div><b>Medical disclaimer</b><p>General information only. Not medical advice, a pharmacy inventory, or an ambulance dispatch service.</p></div></div></footer>
+<script>
+let userCoords=null;
+let gpsWatchId=null;
+let currentLanguage='en';
+let lastMedicine=null;
+const translations={
+  'Paracetamol (acetaminophen)':{name:'पैरासिटामोल (एसीटामिनोफेन)',use:'दर्द और बुखार में आमतौर पर इस्तेमाल की जाती है।',warning:'अधिक मात्रा से लिवर को गंभीर नुकसान हो सकता है। दूसरी दवाओं में यही घटक मौजूद है या नहीं, जाँचें।'},
+  'Cetirizine':{name:'सेटिरिज़िन',use:'एलर्जी के लक्षणों में इस्तेमाल होने वाली एंटीहिस्टामिन दवा।',warning:'कुछ लोगों को नींद आ सकती है। उपयुक्तता और दूसरी दवाओं के साथ असर के बारे में फार्मासिस्ट से पूछें।'},
+  'Ibuprofen':{name:'इबुप्रोफेन',use:'दर्द और सूजन के लिए इस्तेमाल होने वाली दवा।',warning:'यह सभी के लिए उपयुक्त नहीं है, विशेषकर पेट के अल्सर, किडनी की समस्या या गर्भावस्था की कुछ अवस्थाओं में। डॉक्टर या फार्मासिस्ट से पूछें।'},
+  'Oral rehydration salts (ORS)':{name:'ओरल रिहाइड्रेशन सॉल्ट्स (ORS)',use:'डिहाइड्रेशन में शरीर से खोए पानी और लवण की भरपाई में मदद करता है।',warning:'पैकेट पर लिखी सुरक्षित पानी की ठीक मात्रा में ही घोलें। गंभीर डिहाइड्रेशन या पीने में असमर्थता हो तो तुरंत चिकित्सा सहायता लें।'}
+};
+function toggleLanguage(){
+ currentLanguage=currentLanguage==='en'?'hi':'en';
+ document.documentElement.lang=currentLanguage;
+ document.getElementById('langToggle').textContent=currentLanguage==='en'?'हिंदी':'English';
+ document.getElementById('medSearchBtn').textContent=currentLanguage==='en'?'Search':'खोजें';
+ document.getElementById('voiceBtn').textContent=currentLanguage==='en'?'🎤 Speak in English':'🎤 हिंदी में बोलकर खोजें';
+ document.getElementById('medInput').placeholder=currentLanguage==='en'?'Try paracetamol, cetirizine, ibuprofen, ORS':'दवा का नाम लिखें: paracetamol, cetirizine, ibuprofen, ORS';
+ if(lastMedicine) renderMedicine(lastMedicine);
+}
+function renderMedicine(d){
+ const o=document.getElementById('medResult');
+ const x=currentLanguage==='hi'?(translations[d.name]||{name:d.name,use:d.use,warning:d.warning}):d;
+ const labels=currentLanguage==='hi'?['सामान्य उपयोग:','महत्वपूर्ण चेतावनी:','केवल शैक्षिक जानकारी। विश्वसनीय वर्तमान स्रोत से जाँचें और योग्य स्वास्थ्य पेशेवर से सलाह लें।']:['General use:','Important warning:','Sample educational summary only. Check a reliable, current source and ask a qualified professional.'];
+ o.innerHTML='<div class="result"><h4>'+esc(x.name)+'</h4><p><b>'+labels[0]+'</b> '+esc(x.use)+'</p><p><b>'+labels[1]+'</b> '+esc(x.warning)+'</p><p class="small">'+labels[2]+'</p></div>';
+}
+function startVoiceSearch(){
+ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+ const status=document.getElementById('voiceStatus');
+ if(!SR){status.textContent=currentLanguage==='hi'?'इस ब्राउज़र में वॉइस सर्च उपलब्ध नहीं है। हिंदी या English में दवा का नाम टाइप करें।':'Voice search is not supported by this browser. Type the medicine name in Hindi or English.';return;}
+ const r=new SR();r.lang=currentLanguage==='hi'?'hi-IN':'en-IN';r.interimResults=false;r.maxAlternatives=1;
+ status.textContent=currentLanguage==='hi'?'सुन रहा है… दवा का नाम बोलें।':'Listening… say the medicine name.';
+ r.onresult=e=>{document.getElementById('medInput').value=e.results[0][0].transcript;document.getElementById('medForm').requestSubmit();status.textContent=(currentLanguage==='hi'?'सुना गया: ':'Heard: ')+e.results[0][0].transcript;};
+ r.onerror=()=>{status.textContent=currentLanguage==='hi'?'आवाज़ नहीं पहचान पाए। फिर कोशिश करें या टाइप करें।':'Could not recognize speech. Try again or type instead.';};
+ r.start();
+}
+function speakMedicineInfo(languageChoice='both'){
+ const status=document.getElementById('voiceStatus'), synth=window.speechSynthesis;
+ if(!synth){status.textContent='Speech playback is not supported on this device.';return;}
+ if(!lastMedicine){status.textContent=currentLanguage==='hi'?'पहले किसी दवा को खोजें।':'Search for a medicine first.';return;}
+ synth.cancel();
+ const d=lastMedicine, hi=translations[d.name]||{name:d.name,use:d.use,warning:d.warning};
+ const enText=`${d.name}. General use: ${d.use} Important warning: ${d.warning}`;
+ const hiText=`${hi.name}। सामान्य उपयोग: ${hi.use} महत्वपूर्ण चेतावनी: ${hi.warning}`;
+ const choices=languageChoice==='both'?[['en',enText],['hi',hiText]]:[[languageChoice,languageChoice==='hi'?hiText:enText]];
+ const voices=synth.getVoices();
+ choices.forEach(([lang,text],i)=>{
+   const utter=new SpeechSynthesisUtterance(text); utter.lang=lang==='hi'?'hi-IN':'en-IN';
+   const matching=voices.filter(v=>v.lang.toLowerCase().startsWith(lang));
+   const female=matching.find(v=>/female|woman|heera|kalpana|priya|neerja/i.test(v.name));
+   if(female) utter.voice=female;
+   utter.rate=0.92;
+   if(i===0) utter.onstart=()=>status.textContent=languageChoice==='both'?'Speaking in English and Hindi…':(lang==='hi'?'हिंदी में जानकारी सुनाई जा रही है…':'Speaking in English…');
+   if(i===choices.length-1) utter.onend=()=>status.textContent=languageChoice==='both'?'Finished: English + Hindi.':'Finished reading.';
+   synth.speak(utter);
+ });
+}
+function stopSpeaking(){if(window.speechSynthesis)window.speechSynthesis.cancel();document.getElementById('voiceStatus').textContent=currentLanguage==='hi'?'ऑडियो रोक दिया गया।':'Audio stopped.';}
+
+function gpsMessage(en,hi){return currentLanguage==='hi'?hi:en;}
+async function enableLocation(){
+ const s=document.getElementById('locStatus');
+ const btns=[...document.querySelectorAll('button[onclick="enableLocation()"]')];
+ if(!window.isSecureContext){const localFile=location.protocol==='content:'||location.protocol==='file:';s.textContent=localFile?gpsMessage('You opened this HTML from Downloads (content://). Chrome blocks GPS for local files. Upload this HTML to an HTTPS website and open its https:// link to use GPS. For now, enter your city/area/PIN code above and tap a nearby service.','आपने यह HTML Downloads से खोली है (content://)। Chrome स्थानीय फाइल में GPS नहीं चलने देता। GPS के लिए इस HTML को HTTPS वेबसाइट पर अपलोड करके उसका https:// लिंक खोलें। अभी ऊपर शहर/इलाका/PIN कोड लिखकर पास की सेवा दबाएँ।'):gpsMessage('GPS is blocked because this page is not secure. Open the website using its https:// link (not http://).','यह पेज सुरक्षित नहीं है, इसलिए GPS ब्लॉक है। वेबसाइट को https:// वाले लिंक से खोलें, http:// से नहीं।');return;}
+ if(!('geolocation' in navigator)){s.textContent=gpsMessage('Geolocation is not supported by this browser. Update Chrome or enter your area manually.','इस ब्राउज़र में GPS सुविधा उपलब्ध नहीं है। Chrome अपडेट करें या अपना इलाका लिखें।');return;}
+ s.textContent=gpsMessage('Requesting location… keep this page open and tap Allow if Chrome asks.','लोकेशन माँगी जा रही है… पेज खुला रखें और Chrome पूछे तो Allow दबाएँ।');
+ btns.forEach(b=>{b.disabled=true;b.textContent=currentLanguage==='hi'?'GPS जाँच रहे हैं…':'Checking GPS…';});
+ try {
+   if(navigator.permissions && navigator.permissions.query){
+     const perm=await navigator.permissions.query({name:'geolocation'});
+     if(perm.state==='denied') s.textContent=gpsMessage('Chrome currently blocks location for this site. Tap the site icon beside the address bar → Permissions/Site settings → Location → Allow, then reload this page.','Chrome में इस वेबसाइट की Location अनुमति बंद है। एड्रेस बार के पास साइट आइकन → Permissions/Site settings → Location → Allow करें, फिर पेज reload करें।');
+   }
+ } catch(_e) {}
+ navigator.geolocation.getCurrentPosition(p=>{
+   userCoords={lat:p.coords.latitude,lon:p.coords.longitude,accuracy:p.coords.accuracy};
+   const acc=Math.round(p.coords.accuracy);
+   s.textContent=gpsMessage(`GPS connected. Accuracy about ${acc} metres. Tap a nearby service below.`,`GPS कनेक्ट हो गया। सटीकता लगभग ${acc} मीटर है। पास की सेवा खोजने के लिए नीचे दबाएँ।`);
+   document.getElementById('area').placeholder=gpsMessage('GPS connected — or type another area','GPS कनेक्ट है — या दूसरा इलाका लिखें');
+   btns.forEach(b=>{b.disabled=false;b.textContent=b.closest('.hero')?'📍 Turn on live location':'Use GPS';});
+ },e=>{
+   const messages={1:gpsMessage('Permission denied. In Chrome, open this site’s settings → Permissions → Location → Allow, then reload and try again.','अनुमति नहीं मिली। Chrome में इस वेबसाइट की Settings → Permissions → Location → Allow करें, फिर पेज reload करके दोबारा कोशिश करें।'),2:gpsMessage('Phone location is on, but Chrome could not determine your position. Turn on Google Location Accuracy/Wi‑Fi scanning, move outdoors, and retry.','मोबाइल की लोकेशन चालू है, लेकिन Chrome जगह नहीं पहचान पाया। Google Location Accuracy/Wi‑Fi scanning चालू करें, खुली जगह पर जाएँ और फिर कोशिश करें।'),3:gpsMessage('Location request timed out. Keep Location on, wait a little, and tap Use GPS again.','लोकेशन मिलने में समय समाप्त हो गया। Location चालू रखें, थोड़ा इंतज़ार करें और Use GPS फिर दबाएँ।')};
+   s.textContent=messages[e.code]||gpsMessage('Could not get your location. Check Chrome site permissions and phone Location settings, then retry.','लोकेशन नहीं मिल सकी। Chrome की साइट अनुमति और मोबाइल की Location सेटिंग जाँचकर फिर कोशिश करें।');
+   btns.forEach(b=>{b.disabled=false;b.textContent=b.closest('.hero')?'📍 Turn on live location':'Use GPS';});
+ },{enableHighAccuracy:true,timeout:60000,maximumAge:0});
+}
+function mapSearch(type){
+ const area=document.getElementById('area').value.trim();let url;
+ if(userCoords&&!area){url='https://www.google.com/maps/search/'+encodeURIComponent(type)+'/@'+userCoords.lat+','+userCoords.lon+',15z';}
+ else if(area){url='https://www.google.com/maps/search/'+encodeURIComponent(type+' near '+area);}
+ else {document.getElementById('locStatus').textContent=gpsMessage('Turn on GPS or enter a city/area before searching nearby.','पास में खोजने के लिए GPS चालू करें या शहर/इलाका लिखें।');document.getElementById('area').focus();return;}
+ window.open(url,'_blank','noopener,noreferrer');
+}
+const data={
+'paracetamol':{name:'Paracetamol (acetaminophen)',use:'Commonly used for pain and fever.',warning:'Taking too much can cause serious liver damage. Check combination products for duplicate ingredients.'},
+'acetaminophen':{name:'Paracetamol (acetaminophen)',use:'Commonly used for pain and fever.',warning:'Taking too much can cause serious liver damage. Check combination products for duplicate ingredients.'},
+'cetirizine':{name:'Cetirizine',use:'An antihistamine commonly used for allergy symptoms.',warning:'May cause drowsiness in some people. Ask a pharmacist about suitability and interactions.'},
+'ibuprofen':{name:'Ibuprofen',use:'An anti-inflammatory medicine used for pain and inflammation.',warning:'Not suitable for everyone, including some people with stomach ulcers, kidney problems, or certain pregnancy stages. Ask a clinician or pharmacist.'},
+'ors':{name:'Oral rehydration salts (ORS)',use:'Helps replace water and salts lost through dehydration.',warning:'Mix with exactly the amount of safe water stated on the packet. Seek urgent care for severe dehydration or inability to drink.'}
+};
+function esc(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+document.getElementById('medForm').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('medInput').value.trim().toLowerCase(),o=document.getElementById('medResult'),d=data[q];if(d){lastMedicine=d;renderMedicine(d);}else{lastMedicine=null;o.innerHTML=currentLanguage==='hi'?'<div class="result"><h4>इस डेमो में जानकारी उपलब्ध नहीं</h4><p>इसका मतलब यह नहीं कि दवा अनुपलब्ध या असुरक्षित है। नीचे दिए गए CDSCO आधिकारिक लिंक पर खोजें या फार्मासिस्ट से पूछें।</p></div>':'<div class="result"><h4>No local demo entry</h4><p>This does not mean the medicine is unavailable or unsafe. Use the official CDSCO search link below or ask a pharmacist. The site is not connected to a comprehensive live medicine database yet.</p></div>'; }});
+</script></body></html>
